@@ -22,7 +22,7 @@ public class EmployeeData {
         this.id = id;
     }
 
-    public StringProperty namProperty() {
+    public StringProperty nameProperty() {
         return name;
     }
 

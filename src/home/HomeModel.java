@@ -37,7 +37,6 @@ public class HomeModel {
                     resultSet.getString(4)
                 ));
             }
-
             return employeeData;
 
         } catch (SQLException e) {
