@@ -1,3 +1,4 @@
+package login;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -20,16 +21,12 @@ public class LoginController implements Initializable {
 
     @FXML
     private Label dbStatus;
-
     @FXML
     private TextField username;
-
     @FXML
     private PasswordField password;
-
     @FXML
     private Button loginBtn;
-
     @FXML
     private Label loginStatus;
 
@@ -43,6 +40,7 @@ public class LoginController implements Initializable {
         }
     }
 
+    @FXML
     public void Login(ActionEvent event) {
 
         if (this.loginModel.isLogin(this.username.getText(), this.password.getText())) {
@@ -59,7 +57,7 @@ public class LoginController implements Initializable {
     public void homepage() {
         Stage homeStage = new Stage();
         try {
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("Home.fxml")));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("../home/Home.fxml")));
             homeStage.setScene(scene);
             homeStage.setTitle("Home");
             homeStage.setResizable(false);
