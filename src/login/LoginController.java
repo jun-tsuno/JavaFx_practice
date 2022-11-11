@@ -12,7 +12,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.control.skin.VirtualContainerBase;
 import javafx.stage.Stage;
 
 public class LoginController implements Initializable {
@@ -54,7 +53,28 @@ public class LoginController implements Initializable {
         }
     }
 
+        @FXML
+        public void signUpPage() {
+
+            Stage stage = (Stage) this.loginBtn.getScene().getWindow();
+            stage.close();
+
+            Stage signUpStage = new Stage();
+            try {
+                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/signup/SignUp.fxml")));
+
+                signUpStage.setScene(scene);
+                signUpStage.setTitle("Register Page");
+                signUpStage.setResizable(false);
+                signUpStage.show();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
     public void homepage() {
+
         Stage homeStage = new Stage();
         try {
             Scene scene = new Scene(FXMLLoader.load(getClass().getResource("../home/Home.fxml")));
@@ -66,5 +86,4 @@ public class LoginController implements Initializable {
             e.printStackTrace();
         }
     }
-
 }
